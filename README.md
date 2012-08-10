@@ -1,6 +1,6 @@
 # Omniauth Wepay
 
-WePay OAuth2 Strategy for OmniAuth 2.0.
+WePay OAuth2 Strategy for OmniAuth 1.0.
 
 ## Installation
 
@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-OmniAuth::Strategies::Wepay is a Rack middleware. Read the OmniAuth 2.0 docs for detailed instructions: https://github.com/intridea/omniauth.
+OmniAuth::Strategies::Wepay is a Rack middleware. Read the OmniAuth 1.0 docs for detailed instructions: https://github.com/intridea/omniauth.
 
 Here's a quick example, adding the middleware to a Rails app in config/initializers/omniauth.rb:
 
