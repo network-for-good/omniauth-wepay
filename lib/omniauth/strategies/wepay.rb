@@ -15,7 +15,6 @@ module OmniAuth
         :site 					=> "https://stage.wepayapi.com/v2"
       }
 
-      # TODO: make sure it works on live endpoints too
 			info do 
 		  	{"email"=> raw_info["email"], "name"=> "#{raw_info['first_name']} #{raw_info['last_name']}"}
 			end
