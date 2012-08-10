@@ -15,6 +15,10 @@ module OmniAuth
         :site 					=> "https://stage.wepayapi.com/v2"
       }
 
+      uid do
+      	raw_info["user_id"]
+      end
+
 			info do 
 		  	{"email"=> raw_info["email"], "name"=> "#{raw_info['first_name']} #{raw_info['last_name']}"}
 			end
