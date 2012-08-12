@@ -8,7 +8,7 @@ module OmniAuth
 
       option :fields, [:user_id, :name, :email]
  			option :uid_field, :user_id
- 			
+ 			option :scope, DEFAULT_PERMISSIONS
       option :client_options, {
         :authorize_url  => "https://stage.wepay.com/v2/oauth2/authorize",
         :token_url			=> "https://stage.wepayapi.com/v2/oauth2/token",
