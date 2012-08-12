@@ -5,11 +5,8 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Volkan Unsal"]
   gem.email         = ["spocksplanet@gmail.com"]
   gem.summary       = %q{Omniauth strategy for WePay}
-  gem.description   = %q{Omniauth strategy for WePay}
-
-
-  gem.add_runtime_dependency "rest-client"
-  gem.add_runtime_dependency "multi_json"
+  gem.homepage      = %q{https://github.com/tenaciousflea/omniauth-wepay}
+  gem.description   = %q{Provides an easy way to build OAuth using WePay for Omniauth}
 
 
   gem.files         = `git ls-files`.split($\)
