@@ -6,7 +6,7 @@ WePay OAuth2 Strategy for OmniAuth 1.0.
 
 Add this line to your application's Gemfile:
 
-    gem 'omniauth-wepay'
+    gem 'omniauth-wepay', github: "tenaciousflea/omniauth-wepay"
 
 And then execute:
 
