@@ -1,4 +1,4 @@
-module Omniauth::Wepay
+module Omniauth-wepay
   VERSION = [0, 0, 0]
 
   class << VERSION
