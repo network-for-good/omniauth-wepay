@@ -1,18 +1,21 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/omniauth/version', __FILE__)
+$:.unshift File.expand_path('lib', File.dirname(__FILE__))
+require 'omniauth-wepay/version'
 
 Gem::Specification.new do |gem|
-  gem.authors       = ["Volkan Unsal"]
-  gem.email         = ["spocksplanet@gmail.com"]
+  gem.name          = 'omniauth-wepay'
+  gem.version       = Omniauth-wepay::VERSION
+  gem.authors       = ['Volkan Unsal']
+  gem.email         = ['spocksplanet@gmail.com']
   gem.summary       = %q{Omniauth strategy for WePay}
   gem.homepage      = %q{https://github.com/tenaciousflea/omniauth-wepay}
   gem.description   = %q{Provides an easy way to build OAuth using WePay for Omniauth}
-
-
-  gem.files         = `git ls-files`.split($\)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = "omniauth-wepay"
   gem.require_paths = ["lib"]
-  gem.version       = Omniauth::Wepay::VERSION
+  
+  gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  gem.files         = `git ls-files`.split("\n")
+  gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+
+  gem.add_development_dependency 'ritual', '~> 0.4.1'
 end
