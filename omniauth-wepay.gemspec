@@ -4,7 +4,7 @@ require 'omniauth/version'
 
 Gem::Specification.new do |gem|
   gem.name          = 'omniauth-wepay'
-  gem.version       = Omniauth-wepay::VERSION
+  gem.version       = Omniauth::Wepay::VERSION
   gem.authors       = ['Volkan Unsal']
   gem.email         = ['spocksplanet@gmail.com']
   gem.summary       = %q{Omniauth strategy for WePay}

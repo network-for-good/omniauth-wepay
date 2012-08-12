@@ -1,11 +1,13 @@
-module Omniauth::Wepay
-  VERSION = [0, 0, 2]
+module Omniauth
+	module Wepay
+	  VERSION = [0, 0, 3]
 
-  class << VERSION
-    include Comparable
+	  class << VERSION
+	    include Comparable
 
-    def to_s
-      join('.')
-    end
-  end
+	    def to_s
+	      join('.')
+	    end
+	  end
+	end
 end
