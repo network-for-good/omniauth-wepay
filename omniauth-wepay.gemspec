@@ -4,6 +4,7 @@ require File.expand_path('../lib/omniauth/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Volkan Unsal"]
   gem.email         = ["spocksplanet@gmail.com"]
+  gem.summary       = %q{Omniauth strategy for WePay}
   gem.description   = %q{Omniauth strategy for WePay}
 
 
