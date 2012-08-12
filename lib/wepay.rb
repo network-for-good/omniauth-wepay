@@ -1,6 +1,6 @@
 require "omniauth/strategies/wepay"
 
-module Omniauth
+module OmniAuth
 	module Wepay
   	autoload :VERSION, 'omniauth/version'
 	end

@@ -1,4 +1,4 @@
-module Omniauth
+module OmniAuth
 	module Wepay
 	  VERSION = [0, 0, 3]
 
