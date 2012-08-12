@@ -1,5 +1,5 @@
 module Omniauth::Wepay
-  VERSION = [0, 0, 0]
+  VERSION = [0, 0, 2]
 
   class << VERSION
     include Comparable
