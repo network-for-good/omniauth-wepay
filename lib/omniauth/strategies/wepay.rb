@@ -12,7 +12,8 @@ module OmniAuth
       option :client_options, {
         :authorize_url  => "https://stage.wepay.com/v2/oauth2/authorize",
         :token_url      => "https://stage.wepayapi.com/v2/oauth2/token",
-        :site           => "https://stage.wepayapi.com/v2"
+        :site           => "https://stage.wepayapi.com/v2",
+        :user_path      => "/user"
       }
 
       uid do
@@ -24,12 +25,21 @@ module OmniAuth
       end
 
       def raw_info
-        params = {code: request.params['code'], client_id:options.client_id, redirect_uri: callback_url, client_secret: options.client_secret}.to_param
-        url = options.client_options.token_url + "?" + params
+        c_options = options.client_options
+
+        params = {
+          code: request.params['code'], 
+          client_id:options.client_id, 
+          redirect_uri: callback_url, 
+          client_secret: options.client_secret
+        }.to_param
+
+        url = c_options[:token_url] + "?" + params
 
         info = access_token.post(url).parsed
+
+        user_url = c_options[:site] + c_options[:user_path]
         
-        user_url = "https://stage.wepayapi.com/v2/user"
         info2 = client.request(:post, user_url) do |req|
           req.headers["Authorization"] = "Bearer #{info["access_token"]}"
         end.parsed
