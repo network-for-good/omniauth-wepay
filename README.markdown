@@ -22,6 +22,8 @@ OmniAuth::Strategies::Wepay is a Rack middleware. Read the OmniAuth 1.0 docs for
 
 Here's a quick example, adding the middleware to a Rails app in config/initializers/omniauth.rb:
 ```ruby
+require "omniauth/strategies/wepay"
+
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :wepay, ENV['APP_ID'], ENV['SECRET']
 end
