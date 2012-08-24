@@ -33,6 +33,8 @@ Currently the gem only supports the "stage" endpoints. When you are ready to go 
 
 
 ```ruby
+require "omniauth/strategies/wepay"
+
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :wepay, ENV['APP_ID'], ENV['SECRET'] do |config|
     config.client_options.authorize_url  = "https://www.wepay.com/v2/oauth2/authorize"
