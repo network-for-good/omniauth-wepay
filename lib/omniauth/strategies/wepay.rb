@@ -4,7 +4,7 @@ module OmniAuth
   module Strategies
     class Wepay < OmniAuth::Strategies::OAuth2
 
-      DEFAULT_PERMISSIONS = "manage_accounts,view_balance,collect_payments,refund_payments,view_user"
+      DEFAULT_PERMISSIONS = "manage_accounts,view_balance,collect_payments,refund_payments,view_user,preapprove_payments"
 
       option :fields, [:user_id, :name, :email]
       option :uid_field, :user_id
