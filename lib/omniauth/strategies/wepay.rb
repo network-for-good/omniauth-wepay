@@ -21,7 +21,12 @@ module OmniAuth
       end
 
       info do 
-        {"email"=> raw_info["email"], "name"=> "#{raw_info['first_name']} #{raw_info['last_name']}"}
+        {
+         "email"        => raw_info["email"], 
+         "name"         => "#{raw_info['first_name']} #{raw_info['last_name']}",
+         "first_name"   => raw_info['first_name'],
+         "last_name"    => raw_info['last_name']
+         }
       end
 
       def raw_info
@@ -29,7 +34,7 @@ module OmniAuth
 
         params = {
           code: request.params['code'], 
-          client_id:options.client_id, 
+          client_id: options.client_id, 
           redirect_uri: callback_url, 
           client_secret: options.client_secret
         }.to_param
