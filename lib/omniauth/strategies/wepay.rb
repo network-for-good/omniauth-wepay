@@ -17,13 +17,13 @@ module OmniAuth
       }
 
       uid do
-        access_token.params[:user_id]
+        raw_info['user_id']
       end
 
       info do
         {
-         "email"        => raw_info["email"],
-         "name"         => raw_info["user_name"],
+         "email"        => raw_info['email'],
+         "name"         => raw_info['user_name'],
          "first_name"   => raw_info['first_name'],
          "last_name"    => raw_info['last_name']
          }
@@ -36,7 +36,7 @@ module OmniAuth
           req.headers["Authorization"] = "Bearer #{access_token.token}"
         end.parsed
 
-        @raw_info ||= info
+        @raw_info ||= info.merge({user_id: access_token.params["user_id"]})
       end
     end
   end

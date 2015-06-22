@@ -1,3 +1,6 @@
+== 0.0.7 2015-06-22
+ * corrected uid
+	
 == 0.0.6 2015-06-22
  * updated to work with most recent version of API
  * remove superfluous call to get the access_token
