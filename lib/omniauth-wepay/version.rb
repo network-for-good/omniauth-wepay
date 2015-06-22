@@ -1,5 +1,5 @@
 module OmniAuth
-	module Wepay
-  	VERSION = "0.0.5"
-	end
+  module Wepay
+    VERSION = "0.0.6"
+  end
 end

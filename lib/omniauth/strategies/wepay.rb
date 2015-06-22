@@ -17,41 +17,27 @@ module OmniAuth
       }
 
       uid do
-        raw_info["user_id"]
+        access_token.params[:user_id]
       end
 
-      info do 
+      info do
         {
-         "email"        => raw_info["email"], 
-         "name"         => "#{raw_info['first_name']} #{raw_info['last_name']}",
+         "email"        => raw_info["email"],
+         "name"         => raw_info["user_name"],
          "first_name"   => raw_info['first_name'],
          "last_name"    => raw_info['last_name']
          }
       end
 
       def raw_info
-        c_options = options.client_options
+        url = options.client_options[:site] + options.client_options[:user_path]
 
-        params = {
-          code: request.params['code'], 
-          client_id: options.client_id, 
-          redirect_uri: callback_url, 
-          client_secret: options.client_secret
-        }.to_param
-
-        url = c_options[:token_url] + "?" + params
-
-        info = access_token.post(url).parsed
-
-        user_url = c_options[:site] + c_options[:user_path]
-        
-        info2 = client.request(:post, user_url) do |req|
-          req.headers["Authorization"] = "Bearer #{info["access_token"]}"
+        info = client.request(:post, url) do |req|
+          req.headers["Authorization"] = "Bearer #{access_token.token}"
         end.parsed
-        
-        @raw_info ||= info.merge(info2)
+
+        @raw_info ||= info
       end
     end
   end
 end
-

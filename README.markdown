@@ -6,7 +6,7 @@ WePay OAuth2 Strategy for OmniAuth 1.0.
 
 Add this line to your application's Gemfile:
 
-    gem 'omniauth-wepay', github: "tenaciousflea/omniauth-wepay"
+    gem 'omniauth-wepay', git: "https://github.com/Ticketbud/omniauth-wepay"
 
 And then execute:
 
@@ -31,7 +31,7 @@ end
 
 ### Note
 
-Currently the gem only supports the "stage" endpoints. When you are ready to go into production, modify the omniauth.rb as follows to use the production endpoints:
+Currently the gem defaults to the "stage" endpoints. When you are ready to go into production, modify the omniauth.rb as follows to use the production endpoints:
 
 
 ```ruby
@@ -46,8 +46,12 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 end
 ```
 
+## Scopes
+The following scopes are hardcoded into the strategy:
 
-
+```
+manage_accounts,view_balance,collect_payments,refund_payments,view_user,preapprove_payments  
+```
 
 
 ## Contributing
@@ -61,7 +65,7 @@ end
 
 # License
 
-Copyright (c) 2012 by Volkan Unsal
+Copyright (c) 2015 by Brandon Harris
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
