@@ -38,6 +38,10 @@ module OmniAuth
 
         @raw_info ||= info.merge({user_id: access_token.params["user_id"]})
       end
+
+      def callback_url
+        full_host + script_name + callback_path
+      end
     end
   end
 end
